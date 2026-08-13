@@ -1,0 +1,29 @@
+{
+  // help API — single Worker at the edge. See ARCHITECTURE.md §4.
+  "name": "help-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-09-01",
+  "durable_objects": {
+    "bindings": [{ "name": "STREAM_ROOM", "class_name": "StreamRoom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["StreamRoom"] }],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "help-db",
+      "database_id": "REPLACE_WITH_wrangler_d1_create_OUTPUT",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "help-media" }],
+  "kv_namespaces": [{ "binding": "KV", "id": "REPLACE_WITH_wrangler_kv_create_OUTPUT" }],
+  "queues": {
+    "producers": [{ "binding": "JOBS", "queue": "help-jobs" }],
+    "consumers": [{ "queue": "help-jobs", "max_batch_size": 10, "max_retries": 5 }]
+  },
+  "vars": {
+    "ENVIRONMENT": "dev"
+  }
+  // Secrets (wrangler secret put …): STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+  // CF_STREAM_ACCOUNT_ID, CF_STREAM_API_TOKEN, SESSION_JWT_SECRET
+}
