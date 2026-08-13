@@ -1,0 +1,16 @@
+{
+  "name": "help-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:api": "npm run dev --workspace apps/api",
+    "dev:web": "npm run dev --workspace apps/web",
+    "deploy:api": "npm run deploy --workspace apps/api",
+    "deploy:web": "npm run deploy --workspace apps/web"
+  }
+}

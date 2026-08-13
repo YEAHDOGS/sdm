@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* TikTok-style vertical pager: each card is a full viewport, snap-scrolled. */
+.feed {
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.card {
+  position: relative;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #1a1a2e, #16213e 60%, #0f3460);
+  color: #888;
+  font-size: 14px;
+}
+
+.card-top,
+.card-bottom {
+  position: relative;
+  z-index: 1;
+  padding: 16px;
+}
+
+.badge {
+  background: #e94560;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.zone {
+  margin-left: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.helper {
+  margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.tips {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.chat {
+  list-style: none;
+  max-height: 30dvh;
+  overflow-y: auto;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  mask-image: linear-gradient(transparent, black 20%);
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 14px;
+  color: #fff;
+}
+
+.chat-input button {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 14px;
+  color: #fff;
+  cursor: pointer;
+}

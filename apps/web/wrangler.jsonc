@@ -1,0 +1,9 @@
+{
+  // Web app served as Worker static assets (SPA fallback to index.html).
+  "name": "help-web",
+  "compatibility_date": "2024-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
