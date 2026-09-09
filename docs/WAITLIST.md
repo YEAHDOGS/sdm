@@ -25,7 +25,12 @@ the shared-waitlist direction and would be throwaway work.
 
 ## Honesty check
 
-There is no waitlist code in this repo today — everything is a plan.
-Keep it that way until the gate above clears. If a demo, mock, or copy
-mentions a waitlist, label it `stub / pending shared design` so nobody
-mistakes it for working capture.
+There is no waitlist code on `master` — everything is a plan. The
+scaffold on branch `jack/sdm-sweep2` (2026-09-09) includes an explicitly
+stubbed waitlist endpoint (`site/src/routes/api/waitlist/+server.js` —
+"STUB ENDPOINT — placeholder only, do NOT launch against this"; answers
+202 without persisting) and a `WaitlistForm.svelte` that posts to it.
+That stub is **honestly labeled** and not deployed anywhere. Keep it that
+way until the gate above clears. If a demo, mock, or copy mentions a
+waitlist, label it `stub / pending shared design` so nobody mistakes it
+for working capture.
