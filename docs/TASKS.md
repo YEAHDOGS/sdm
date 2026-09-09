@@ -46,7 +46,13 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    on-voice share copy. `/api/waitlist` now hands every signup a
    `referralCode` and accepts/validates `referredBy`. NOTE: the store still
    doesn't exist (P1 #4 stub) — referral crediting must land with the real
-   persistence layer (new-email-only, no self-referrals). UI surface
+   persistence layer (new-email-only, no self-referrals). Analytics layer DONE 2026-09-09:
+   `site/src/lib/analytics.js` (+15 regression tests, 89/89 green) — k-factor over daily/weekly
+   windows, invite→join→activated conversion funnel, leaderboard logic with anti-gaming guards
+   (self-referral rejected from credit; shared-IP/device and aliased-duplicate-email joins
+   flagged-not-dropped, excluded from the trusted score the board ranks by) — POST
+   `site/src/routes/api/referral/analytics` (event batch → summary) +
+   `site/scripts/referral-analytics.mjs` CLI. UI surface
    (share panel in WaitlistForm, queue-position display) is next.
 
 ## P2 — Build the MVP
