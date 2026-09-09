@@ -87,6 +87,24 @@ export function normalizeCode(value) {
 }
 
 /**
+ * Normalize the `referredBy` value of a waitlist signup for server use.
+ *
+ * Accepts a bare code ('ABCD2345'), a '?ref=CODE' query string, or a full
+ * share URL — everything parseReferral understands — so pasting the whole
+ * copied share link into an API client (or a curl body) doesn't 400.
+ * Blank/missing input yields null (no referrer); the endpoint must 400 on
+ * non-blank input that this rejects.
+ *
+ * @param {unknown} raw the raw referredBy value from the request body
+ * @returns {string | null} normalized code, or null when blank/invalid
+ */
+export function extractReferredBy(raw) {
+  if (raw === undefined || raw === null) return null;
+  if (typeof raw !== 'string' || raw.trim() === '') return null;
+  return parseReferral(raw);
+}
+
+/**
  * Build a shareable referral link.
  * @param {string} code valid referral code
  * @param {string} base base URL, e.g. 'https://sdm.app'

@@ -1,5 +1,5 @@
 import { validateSignup } from '$lib/waitlist.js';
-import { isReferralCode, makeReferralCode, normalizeCode } from '$lib/referral.js';
+import { extractReferredBy, makeReferralCode } from '$lib/referral.js';
 import { json } from '@sveltejs/kit';
 
 /**
@@ -31,11 +31,15 @@ export async function POST({ request }) {
   }
 
   let referredBy = null;
-  if (body.referredBy !== undefined && body.referredBy !== null && String(body.referredBy).trim() !== '') {
-    if (!isReferralCode(body.referredBy)) {
+  const rawRef = body.referredBy;
+  if (rawRef !== undefined && rawRef !== null && String(rawRef).trim() !== '') {
+    // Accepts a bare code, '?ref=CODE', or a full pasted share URL —
+    // the ReferralPanel share copy hands out full links, so clients
+    // posting them must not 400 here.
+    referredBy = extractReferredBy(rawRef);
+    if (!referredBy) {
       return json({ error: 'That referral code doesn’t look right.' }, { status: 400 });
     }
-    referredBy = normalizeCode(body.referredBy);
   }
 
   // TODO: persist res.payload + referralCode to the waitlist store before launch.
