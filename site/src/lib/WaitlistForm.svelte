@@ -57,11 +57,20 @@
       const r = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ ...res.payload, referredBy })
+        // ownCode lets the endpoint reject self-referrals (re-signups farming
+        // queue jumps); null on first join, restored from storage after.
+        body: JSON.stringify({ ...res.payload, referredBy, ownCode: referralCode })
       });
       if (!r.ok) {
         const data = await r.json().catch(() => ({}));
-        throw new Error(data.error || 'request failed');
+        // Surface the endpoint's own words on 4xx (rate limit / bad code) —
+        // they carry the fix ("wait a beat", "can't refer yourself").
+        if (typeof data.error === 'string' && data.error.trim() !== '') {
+          error = data.error;
+          status = 'idle';
+          return;
+        }
+        throw new Error('request failed');
       }
       const data = await r.json().catch(() => ({}));
       if (isReferralCode(data.referralCode)) {
