@@ -1,5 +1,6 @@
 <script>
   import WaitlistForm from '$lib/WaitlistForm.svelte';
+  import QuizVibe from '$lib/QuizVibe.svelte';
   import '../app.css';
 </script>
 
@@ -97,6 +98,20 @@
         <p class="mt-1 text-white/60">Press play on the overlap playlist before you type. Then say hi at the show.</p>
       </li>
     </ol>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="border-t border-white/10 bg-jungle-900">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <h2 class="font-display text-3xl font-black text-white sm:text-4xl">Find your frequency.</h2>
+      <p class="mt-3 text-white/60">
+        Ten questions, your sonic fingerprint, and the pack you'd match with —
+        scored live by the same vibe engine the app runs on.
+      </p>
+      <div class="mt-8">
+        <QuizVibe />
+      </div>
+    </div>
   </section>
 
   <!-- SAFETY -->
