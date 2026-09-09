@@ -41,8 +41,14 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
 7. **Scaffold the app.** SvelteKit app shell, auth, profile model.
 8. **Music-first onboarding.** Questions before photos; self-declared
    sonic fingerprint.
-9. **Vibe score v0.** Implement the matching sketch in CONCEPT.md §4:
-   overlap + scene affinity + gig proximity, explainable output.
+9. **Vibe score v0.** DONE 2026-09-09 in `site/src/lib/vibe.js` (+19
+   regression tests): weighted Jaccard overlap on artists/tracks/genres,
+   long-tail taste-depth bonus, rarity-weighted scene affinity, gig
+   proximity ("same room Friday" boost), opt-in sonic-fingerprint alignment
+   (ties into the P1 #5 quiz engine), explainable `reasons[]`, and a
+   "fresh ears" provisional flag for thin profiles. Anti-gaming note: when
+   connected listening data lands (P3 #12), it should outrank declared
+   data here.
 10. **Match deck + chat.** Keep it minimal: cards, vibe score, shared
     playlist preview, chat.
 11. **Safety baseline.** 18+ gate, report, block. Ship with the MVP, not

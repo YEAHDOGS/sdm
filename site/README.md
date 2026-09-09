@@ -14,6 +14,14 @@ house stack, implementing TASKS.md P1 #4 (landing page + waitlist).
 - `src/lib/quiz.js` — pure sonic-fingerprint quiz engine: 10 questions,
   4 scoring axes (heat/grit/depth/nocturne), 7 jungle archetypes,
   `scoreQuiz()` + share-text card payload. UI component still to build.
+- `src/lib/vibe.js` — pure vibe-score v0 matching engine: weighted
+  Jaccard overlap (artists/tracks/genres), long-tail taste-depth bonus,
+  rarity-weighted scene affinity, gig proximity boost, opt-in
+  sonic-fingerprint alignment, explainable `reasons[]`, "fresh ears"
+  provisional flag. Consumes `quiz.js` fingerprints.
+- `tests/quiz.test.js` — 10 regression tests for the quiz engine.
+- `tests/vibe.test.js` — 19 regression tests, run with plain node
+  (`npm test` / `node --test 'tests/*.test.js'`), no install needed.
 - `src/routes/api/waitlist/+server.js` — **stub endpoint.** Validates and
   answers 202, persists nothing. Must be wired to a real store before launch.
 - `tests/waitlist.test.js` — 11 regression tests, run with plain node
