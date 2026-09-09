@@ -69,6 +69,7 @@ green baseline that runs anywhere.
 | Task list | Drafted + tracked (`docs/TASKS.md`) |
 | Landing page + waitlist | Shipped in `site/`, 2026-09-09 |
 | Quiz + vibe engine + UI | Shipped in `site/`, 2026-09-09 |
+| Referral loop (logic) | Shipped in `site/src/lib/referral.js`, 2026-09-09 — codes, queue-jumping, k-factor math; store + UI surface still to come |
 | Backend / matching API | Not started |
 | Waitlist persistence | **Stub — not shippable as-is** |
 | Legal / safety review | Not started — required before any beta |

@@ -38,8 +38,16 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    NOTE: the Svelte component itself is NOT build-verified here — `npm install`
    needs network (default-deny); `npm run check` / `npm run build` must run
    on a networked machine before deploy.
-6. **Waitlist referral loop.** Invite-based queue jumping. Measure
-   viral coefficient before writing app code.
+6. **Waitlist referral loop.** Invite-based queue jumping. DONE 2026-09-09 —
+   LOGIC (`site/src/lib/referral.js`, +20 regression tests, 74/74 green):
+   unambiguous referral-code generation/validation, share-link builder +
+   `?ref=` parser, bounded queue-jump ranking (`rankQueue`: 3 places per
+   verified referral, capped at 25), `viralStats` k-factor/conversion math,
+   on-voice share copy. `/api/waitlist` now hands every signup a
+   `referralCode` and accepts/validates `referredBy`. NOTE: the store still
+   doesn't exist (P1 #4 stub) — referral crediting must land with the real
+   persistence layer (new-email-only, no self-referrals). UI surface
+   (share panel in WaitlistForm, queue-position display) is next.
 
 ## P2 — Build the MVP
 
