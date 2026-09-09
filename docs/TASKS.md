@@ -19,9 +19,15 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
 
 ## P1 — Validate demand
 
-4. **Landing page + waitlist.** SvelteKit + Tailwind on Cloudflare Pages,
-   per the house stack. Pitch + email capture. (First real code in this
-   repo.)
+4. **Landing page + waitlist.** SCAFFOLDED 2026-09-09 in `site/`:
+   SvelteKit 5 + Tailwind v4 (adapter-static, Cloudflare Pages-ready),
+   hero/how-it-works/safety sections per `docs/VOICE.md`, waitlist form
+   (email + city + scene tags) with client validation, `/api/waitlist`
+   endpoint. STUB: endpoint answers 202 but persists nothing — must be
+   wired to a real store (D1/KV) + rate-limited before launch. NOT
+   build-verified here: `npm install` needs network (this machine is
+   default-deny); build/check/tests (except `npm test`) must run on a
+   networked machine before deploy.
 5. **Sonic fingerprint quiz.** 10-question music quiz → shareable result
    card. Lives on the landing page; doubles as the viral loop.
 6. **Waitlist referral loop.** Invite-based queue jumping. Measure
