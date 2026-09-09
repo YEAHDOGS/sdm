@@ -39,6 +39,9 @@ photo-swipe mechanics.
   music-matching sketch, safety & moderation design, monetization.
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased path from concept → beta.
 - [`docs/TASKS.md`](docs/TASKS.md) — prioritized build task list.
+- [`docs/VOICE.md`](docs/VOICE.md) — brand voice guide: tone principles,
+  sample copy for notifications/empty states/match messages, and hard
+  content lines (app-store-safe by design).
 
 ## Getting started (when there's code)
 
