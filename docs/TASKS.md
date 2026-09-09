@@ -52,8 +52,17 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    (self-referral rejected from credit; shared-IP/device and aliased-duplicate-email joins
    flagged-not-dropped, excluded from the trusted score the board ranks by) — POST
    `site/src/routes/api/referral/analytics` (event batch → summary) +
-   `site/scripts/referral-analytics.mjs` CLI. UI surface
-   (share panel in WaitlistForm, queue-position display) is next.
+   `site/scripts/referral-analytics.mjs` CLI. UI surface DONE 2026-09-09:
+   `?ref=` captured on form mount and sent as `referredBy` (+ invited-by
+   banner), new `site/src/lib/ReferralPanel.svelte` share panel after signup —
+   invite code, share link, suggested message, copy buttons w/ manual fallback,
+   jump-math explainer (3 spots/referral, max 25) — code persisted to
+   localStorage so returning browsers land back on their panel. NO fake queue
+   position: the waitlist store still doesn't exist (P1 #4 stub), so position
+   display waits on the real persistence layer with it. `npm run check` /
+   `npm run build` still must run on a networked machine before deploy
+   (new `site/scripts/svelte-smoke.mjs` covers balance + import resolution
+   offline).
 
 ## P2 — Build the MVP
 

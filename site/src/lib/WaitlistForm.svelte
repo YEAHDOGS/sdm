@@ -1,6 +1,9 @@
 <script>
+  import { onMount } from 'svelte';
+  import ReferralPanel from './ReferralPanel.svelte';
   import { SCENES } from './waitlist.js';
   import { validateSignup } from './waitlist.js';
+  import { isReferralCode, parseReferral } from './referral.js';
 
   /** @type {string} */
   let email = $state('');
@@ -12,6 +15,27 @@
   let error = $state(null);
   /** @type {'idle' | 'sending' | 'done'} */
   let status = $state('idle');
+  /** @type {string | null} referral code captured from ?ref= (inviter's code) */
+  let referredBy = $state(null);
+  /** @type {string | null} this signup's own code, returned by the endpoint */
+  let referralCode = $state(null);
+
+  const STORE_KEY = 'sdm.referralCode';
+
+  onMount(() => {
+    // Capture ?ref=CODE or a pasted share link from the URL (P1 #6).
+    referredBy = parseReferral(window.location.search);
+    // If this browser already joined, jump straight back to the share panel.
+    try {
+      const saved = window.localStorage.getItem(STORE_KEY);
+      if (isReferralCode(saved)) {
+        referralCode = String(saved).trim().toUpperCase();
+        status = 'done';
+      }
+    } catch {
+      // Private mode / blocked storage — form still works, no panel restore.
+    }
+  });
 
   function toggle(scene) {
     const next = new Set(scenes);
@@ -33,11 +57,20 @@
       const r = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(res.payload)
+        body: JSON.stringify({ ...res.payload, referredBy })
       });
       if (!r.ok) {
         const data = await r.json().catch(() => ({}));
         throw new Error(data.error || 'request failed');
+      }
+      const data = await r.json().catch(() => ({}));
+      if (isReferralCode(data.referralCode)) {
+        referralCode = String(data.referralCode).trim().toUpperCase();
+        try {
+          window.localStorage.setItem(STORE_KEY, referralCode);
+        } catch {
+          // Storage unavailable — panel still renders for this session.
+        }
       }
       status = 'done';
     } catch {
@@ -49,11 +82,13 @@
 </script>
 
 {#if status === 'done'}
-  <div class="rounded-2xl border border-acid-400/40 bg-jungle-800 p-8 text-center">
-    <p class="font-display text-2xl font-bold text-acid-400">You\u2019re in the jungle.</p>
-    <p class="mt-2 text-white/70">Watch your inbox. First watering holes get announced soon.</p>
-  </div>
+  <ReferralPanel code={referralCode} city={city || null} />
 {:else}
+  {#if referredBy}
+    <p class="mb-4 rounded-xl border border-acid-400/30 bg-acid-400/10 px-4 py-3 text-sm text-acid-400">
+      A friend put you on — you’ll land ahead of the walk-ins.
+    </p>
+  {/if}
   <form onsubmit={submit} novalidate class="rounded-2xl border border-white/10 bg-jungle-800 p-6 sm:p-8">
     <label class="block">
       <span class="text-sm font-medium text-white/80">Email</span>
