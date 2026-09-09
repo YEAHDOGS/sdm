@@ -16,11 +16,15 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
 
 4. **Landing page + waitlist.** SvelteKit + Tailwind on Cloudflare Pages,
    per the house stack. Pitch + email capture. (First real code in this
-   repo.)
+   repo.) **ON HOLD** — see [`WAITLIST.md`](WAITLIST.md): the
+   waitlist design is a shared Cloudflare decision awaiting Brando's
+   confirmation. Build the landing page with a clearly-marked stub/pending
+   slot, not a standalone waitlist.
 5. **Sonic fingerprint quiz.** 10-question music quiz → shareable result
    card. Lives on the landing page; doubles as the viral loop.
 6. **Waitlist referral loop.** Invite-based queue jumping. Measure
-   viral coefficient before writing app code.
+   viral coefficient before writing app code. **ON HOLD** — gated on the
+   shared waitlist design per [`WAITLIST.md`](WAITLIST.md).
 
 ## P2 — Build the MVP
 

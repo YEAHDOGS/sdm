@@ -39,6 +39,9 @@ photo-swipe mechanics.
   music-matching sketch, safety & moderation design, monetization.
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased path from concept → beta.
 - [`docs/TASKS.md`](docs/TASKS.md) — prioritized build task list.
+- [`docs/WAITLIST.md`](docs/WAITLIST.md) — **waitlist status: on hold.**
+  No waitlist is built or deployed until Brando confirms the shared
+  Cloudflare waitlist design.
 
 ## Getting started (when there's code)
 
