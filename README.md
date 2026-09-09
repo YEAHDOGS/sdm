@@ -37,6 +37,8 @@ photo-swipe mechanics.
 
 - [`docs/CONCEPT.md`](docs/CONCEPT.md) — brand, audience, differentiators,
   music-matching sketch, safety & moderation design, monetization.
+- [`docs/BRAND-VOICE.md`](docs/BRAND-VOICE.md) — the jungle voice:
+  principles, do/don't, and sample copy for every surface.
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased path from concept → beta.
 - [`docs/TASKS.md`](docs/TASKS.md) — prioritized build task list.
 

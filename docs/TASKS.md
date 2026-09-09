@@ -6,9 +6,10 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
 
 1. ⚡ **Decide: is "sdm" the public name?** Trademark screen + gut check
    on app-store viability. Everything brand-related blocks on this.
-2. ⚡ **Write the brand voice guide.** 10–20 sample lines (push
-   notifications, empty states, match messages) in the jungle voice.
-   Cheap, and it keeps every future surface consistent.
+2. ✅ **Write the brand voice guide.** Done — `docs/BRAND-VOICE.md`
+   with 21 sample lines (push notifications, empty states, match
+   messages, onboarding prompts, errors, safety copy) in the jungle
+   voice. Cheapest consistency win available.
 3. **Competitive scan.** 5 music/social dating apps: features, pricing,
    reviews, where they fail. One page of notes, not a thesis.
 
