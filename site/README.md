@@ -11,6 +11,9 @@ house stack, implementing TASKS.md P1 #4 (landing page + waitlist).
   client-side with `src/lib/waitlist.js`, POSTs to `/api/waitlist`.
 - `src/lib/waitlist.js` — pure, framework-free signup validation/normalize
   logic shared by the form and the endpoint.
+- `src/lib/quiz.js` — pure sonic-fingerprint quiz engine: 10 questions,
+  4 scoring axes (heat/grit/depth/nocturne), 7 jungle archetypes,
+  `scoreQuiz()` + share-text card payload. UI component still to build.
 - `src/routes/api/waitlist/+server.js` — **stub endpoint.** Validates and
   answers 202, persists nothing. Must be wired to a real store before launch.
 - `tests/waitlist.test.js` — 11 regression tests, run with plain node
