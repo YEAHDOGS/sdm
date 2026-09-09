@@ -29,7 +29,7 @@ photo-swipe mechanics.
 | Brand / concept | Drafted (`docs/CONCEPT.md`) |
 | Roadmap | Drafted (`docs/ROADMAP.md`) |
 | Task list | Drafted (`docs/TASKS.md`) |
-| Prototype | Not started |
+| Prototype | Scaffolded in `site/` (landing page + waitlist stub, 2026-09-09) |
 | Backend / matching | Not started |
 | Legal / safety review | Not started — required before any beta |
 
@@ -48,6 +48,10 @@ photo-swipe mechanics.
 Nothing to run yet. First engineering step is tracked in
 [`docs/TASKS.md`](docs/TASKS.md): scaffold a SvelteKit app with the house
 Tailwind setup and a landing page that pitches the concept.
+
+**Update 2026-09-09:** the scaffold now exists in `site/` (SvelteKit 5 +
+Tailwind v4 + static adapter). It's not yet build-verified — `npm install`
+needs a networked machine. See `site/README.md`.
 
 ## License
 
