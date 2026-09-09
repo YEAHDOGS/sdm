@@ -29,7 +29,10 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    default-deny); build/check/tests (except `npm test`) must run on a
    networked machine before deploy.
 5. **Sonic fingerprint quiz.** 10-question music quiz → shareable result
-   card. Lives on the landing page; doubles as the viral loop.
+   card. Lives on the landing page; doubles as the viral loop. LOGIC DONE
+   2026-09-09 in `site/src/lib/quiz.js` (+10 regression tests): 10 questions
+   × 4 axes (heat/grit/depth/nocturne), 7 jungle archetypes, share-text card
+   payload. STUB: Svelte quiz UI not wired yet — build on a networked machine.
 6. **Waitlist referral loop.** Invite-based queue jumping. Measure
    viral coefficient before writing app code.
 
