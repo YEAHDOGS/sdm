@@ -10,6 +10,7 @@ import {
   CODE_LENGTH,
   JUMP_PER_REFERRAL,
   MAX_JUMP,
+  extractReferredBy,
   isReferralCode,
   makeReferralCode,
   normalizeCode,
@@ -86,6 +87,30 @@ describe('shareLink / parseReferral', () => {
   it('returns null for non-code input', () => {
     for (const bad of ['https://sdm.app/', '?ref=', '?ref=BAD!!', '', '   ', null, 42]) {
       assert.equal(parseReferral(bad), null, String(bad));
+    }
+  });
+});
+
+describe('extractReferredBy', () => {
+  it('yields null for missing or blank referredBy (no referrer)', () => {
+    for (const blank of [undefined, null, '', '   ']) {
+      assert.equal(extractReferredBy(blank), null, String(blank));
+    }
+  });
+
+  it('normalizes a bare or lowercase code', () => {
+    assert.equal(extractReferredBy('abcd2345'), 'ABCD2345');
+    assert.equal(extractReferredBy('  ABCD2345  '), 'ABCD2345');
+  });
+
+  it('accepts a full pasted share URL or query string (server-side leniency)', () => {
+    assert.equal(extractReferredBy('https://sdm.app/?ref=abcd2345'), 'ABCD2345');
+    assert.equal(extractReferredBy('?ref=abcd2345'), 'ABCD2345');
+  });
+
+  it('returns null for garbage so the endpoint can 400', () => {
+    for (const bad of ['not-a-code', '?ref=BAD!!', 42, { code: 'abcd2345' }]) {
+      assert.equal(extractReferredBy(bad), null, String(bad));
     }
   });
 });
