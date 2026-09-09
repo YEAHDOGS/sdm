@@ -10,8 +10,12 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    tone principles, 16 sample lines (push notifications, empty states,
    match icebreakers, onboarding, error copy), do/don't table, and hard
    content lines so the app stays app-store-safe.
-3. **Competitive scan.** 5 music/social dating apps: features, pricing,
-   reviews, where they fail. One page of notes, not a thesis.
+3. **Competitive scan.** DONE 2026-09-09 (`docs/COMPETITIVE-SCAN.md`):
+   5 apps (Tastebuds, Vinylly, POM, Kippo, Feeld) — features, pricing,
+   traction signals, where they fail. Key takeaways: density kills
+   incumbents (seed-city launch is the counter), passive Spotify data
+   beats self-declared taste, don't paywall messaging, Gig Radar is the
+   sharpest wedge, $9.99/mo price anchor for Backstage Pass.
 
 ## P1 — Validate demand
 
