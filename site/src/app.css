@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jungle-950: #0a0f0a;
+  --color-jungle-900: #101710;
+  --color-jungle-800: #18241a;
+  --color-acid-400: #c8f542;
+  --color-acid-500: #a8dd2e;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-jungle-950);
+  color: #e8efe4;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
