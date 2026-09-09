@@ -14,7 +14,7 @@ start the next phase until the current one's is met.
 - [ ] Seed-market decision: pick ONE city for the eventual beta.
 - **Exit:** name decision made, pitch fits on an index card.
 
-## Phase 1 — Landing page + waitlist (2–4 weeks)
+## Phase 1 — Landing page (waitlist ON HOLD; 2–4 weeks)
 
 > **WAITLIST ON HOLD** — per [`WAITLIST.md`](WAITLIST.md), no
 > waitlist is built or deployed until Brando confirms the shared
@@ -27,7 +27,9 @@ start the next phase until the current one's is met.
 - [ ] "Sonic fingerprint" quiz prototype on the landing page (10 music
       questions → shareable result card). This doubles as marketing.
 - [~] Waitlist referral loop: invite friends, move up the list.
-- **Exit:** landing page live, 500+ waitlist signups in the seed city.
+- **Exit:** landing page live (with the waitlist slot clearly labeled
+  `stub / pending shared design`); 500+ waitlist signups are gated on the
+  shared-waitlist decision above.
 
 ## Phase 2 — MVP prototype (1–2 months)
 
@@ -36,6 +38,7 @@ start the next phase until the current one's is met.
 - [ ] Vibe score v0 (see CONCEPT.md §4) + match deck + chat.
 - [ ] Safety baseline: 18+ gate, reporting, blocking.
 - [ ] Closed alpha: 50–100 users from the waitlist, all in the seed city.
+      (Pending the shared-waitlist decision — see WAITLIST.md.)
 - **Exit:** 100 alpha users, 20%+ week-2 retention, zero safety incidents
   unhandled >24h.
 

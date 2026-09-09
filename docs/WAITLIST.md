@@ -9,8 +9,9 @@ the design.
 
 ## What this means for sdm's plans
 
-The waitlist items in [`ROADMAP.md`](ROADMAP.md) (Phase 1 — landing page +
-waitlist capture, referral loop) and [`TASKS.md`](TASKS.md) (items 4 and 6)
+The waitlist items in [`ROADMAP.md`](ROADMAP.md) (Phase 1 — landing page;
+waitlist capture and referral loop, both marked on hold) and
+[`TASKS.md`](TASKS.md) (items 4 and 6)
 are **pending**, not approved work. They were written before the shared
 waitlist decision and currently read as a standalone sdm waitlist with
 email/SMS capture and an invite-based referral loop. That conflicts with

@@ -14,9 +14,9 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
 
 ## P1 — Validate demand
 
-4. **Landing page + waitlist.** SvelteKit + Tailwind on Cloudflare Pages,
-   per the house stack. Pitch + email capture. (First real code in this
-   repo.) **ON HOLD** — see [`WAITLIST.md`](WAITLIST.md): the
+4. **Landing page.** SvelteKit + Tailwind on Cloudflare Pages, per the
+   house stack. Pitch + email capture. (First real code in this repo.)
+   **WAITLIST SLOT ON HOLD** — see [`WAITLIST.md`](WAITLIST.md): the
    waitlist design is a shared Cloudflare decision awaiting Brando's
    confirmation. Build the landing page with a clearly-marked stub/pending
    slot, not a standalone waitlist.
