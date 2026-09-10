@@ -10,8 +10,9 @@ Ordered by impact-per-effort. ⚡ = quick win (hours, not days).
    with 21 sample lines (push notifications, empty states, match
    messages, onboarding prompts, errors, safety copy) in the jungle
    voice. Cheapest consistency win available.
-3. **Competitive scan.** 5 music/social dating apps: features, pricing,
-   reviews, where they fail. One page of notes, not a thesis.
+3. ✅ **Competitive scan.** Done — `docs/COMPETITION.md` (Tastebuds,
+   POM, Vinylly, FanMatch, Tinder Festival Mode): features, pricing,
+   where each fails, and sdm's opening. One page of notes, not a thesis.
 
 ## P1 — Validate demand
 
