@@ -44,7 +44,7 @@ helps you find your pack.
    the tone and filters the audience on day one.
 4. **Jungle brand voice.** Edgy, funny, confident copy. Dating apps all
    sound like HR departments; sdm sounds like the afterparty.
-5. **DOGS ecosystem tie-in.** Captain Brando / wearedogs.net audience is a
+5. **DOGS ecosystem tie-in.** The DOGS / wearedogs.net audience is a
    built-in seed community of exactly the right demographic.
 
 ## 4. Music-matching sketch (v0 algorithm)
