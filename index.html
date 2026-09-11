@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SDM — Sex. Drugs. Music. A dating app by DOGS</title>
+<meta name="description" content="SDM (Sex, Drugs, Music) is a dating app for the animals in the jungle. Music-first matching, opt-in compatibility, 18+ and ID-verified. In the works.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070c07">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./favicon.svg">
+<link rel="canonical" href="https://yeahdogs.github.io/sdm/">
+<meta property="og:site_name" content="SDM">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SDM — Sex. Drugs. Music.">
+<meta property="og:description" content="A dating app for the animals in the jungle. Music-first matching, opt-in compatibility, 18+ and ID-verified.">
+<meta property="og:url" content="https://yeahdogs.github.io/sdm/">
+<meta property="og:image" content="https://yeahdogs.github.io/sdm/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SDM — Sex. Drugs. Music. A dating app for the animals in the jungle.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#070c07;
+  --bg2:#0b120b;
+  --ink:#f3eddd;
+  --mut:#a7b096;
+  --amber:#f0a53c;
+  --amber-soft:#f5c069;
+  --line:#1c2b1a;
+  --serif:Georgia,"Nimbus Roman No9 L","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+::selection{background:var(--amber);color:#0a0a06}
+a{color:inherit}
+.skip{position:absolute;left:-9999px;top:0;background:var(--amber);color:#0a0a06;padding:.6rem 1rem;z-index:100;font-weight:700}
+.skip:focus{left:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.site{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
+.brand .mark{
+  width:30px;height:30px;border-radius:50%;background:var(--amber);color:#0a0a06;
+  font-family:var(--serif);font-weight:700;font-style:italic;font-size:1rem;
+  display:grid;place-items:center;line-height:1;
+}
+.brand .word{font-family:var(--mono);font-size:.8rem;letter-spacing:.28em;color:var(--ink)}
+.nav .by{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem}
+.nav .by:hover{color:var(--amber);border-color:var(--amber)}
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 64px;overflow:hidden}
+#flies{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .inner{position:relative;z-index:2;width:100%}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--amber);text-transform:uppercase;margin-bottom:1.1rem}
+h1.display{
+  font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:clamp(3.4rem,17vw,10rem);line-height:.94;letter-spacing:-.02em;
+  text-wrap:balance;
+}
+h1.display .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+h1.display .w>span{display:inline-block;transform:translateY(110%);opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+h1.display .w:nth-child(2)>span{animation-delay:.12s}
+h1.display .w:nth-child(3)>span{animation-delay:.24s}
+@keyframes rise{to{transform:translateY(0);opacity:1}}
+.lede{margin-top:1.4rem;max-width:34ch;font-size:1.15rem;color:var(--ink)}
+.lede em{font-family:var(--serif);color:var(--amber-soft)}
+.status{margin-top:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--mut);text-transform:uppercase}
+.status b{color:var(--amber);font-weight:600}
+.cta-row{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;
+  padding:.95rem 1.7rem;border-radius:6px;transition:transform .18s ease,background .18s ease,color .18s ease;
+}
+.btn.solid{background:var(--amber);color:#0a0a06}
+.btn.solid:hover{background:var(--amber-soft)}
+.btn.solid:active{transform:scale(.97)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--amber);color:var(--amber)}
+.btn.ghost:active{transform:scale(.97)}
+/* ---------- pillars ---------- */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
+.sec-head .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--amber)}
+.sec-head h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.9rem,6vw,3rem);letter-spacing:-.01em}
+.pillar{display:grid;grid-template-columns:1fr;gap:.6rem;padding:2.2rem 0;border-top:1px solid var(--line)}
+.pillar .idx{font-family:var(--serif);font-style:italic;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--amber);opacity:.85}
+.pillar h3{font-family:var(--mono);font-size:.8rem;letter-spacing:.34em;color:var(--amber);text-transform:uppercase}
+.pillar p{font-size:1.25rem;max-width:30ch;line-height:1.45}
+.pillar p strong{font-family:var(--serif);font-style:italic;font-weight:700}
+/* ---------- talk / safety ---------- */
+.talk p.big{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.8rem,6.4vw,3.2rem);line-height:1.15;max-width:22ch}
+.talk p.big .hl{color:var(--amber)}
+.talk .sub{margin-top:1.2rem;color:var(--mut);max-width:44ch}
+.safe{display:grid;gap:0;margin-top:0}
+.safe .row{display:flex;gap:1rem;align-items:baseline;padding:1.1rem 0;border-top:1px solid var(--line);font-size:1rem}
+.safe .row .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;min-width:9.5rem;flex-shrink:0}
+.safe .row p{color:var(--ink)}
+/* ---------- faq ---------- */
+.faq details{border-top:1px solid var(--line);padding:1.2rem 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{font-family:var(--mono);font-style:normal;color:var(--amber);font-size:1.1rem;flex-shrink:0}
+.faq details p{margin-top:.7rem;color:var(--mut);max-width:52ch}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:3rem 0 6rem}
+.foot{display:flex;flex-direction:column;gap:1.4rem}
+.foot .links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot .links a{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);text-decoration:none}
+.foot .links a:hover{color:var(--amber)}
+.made{font-size:.85rem;color:var(--mut)}
+.made a{color:var(--amber);text-decoration:none;font-weight:600}
+.made a:hover{text-decoration:underline}
+/* ---------- sticky mobile cta ---------- */
+.sticky-cta{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:55;
+  display:none;transform:translateY(140%);opacity:0;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s ease;
+}
+.sticky-cta.show{transform:translateY(0);opacity:1}
+.sticky-cta a{
+  display:block;text-align:center;text-decoration:none;font-weight:800;
+  background:var(--amber);color:#0a0a06;border-radius:10px;padding:1rem;font-size:1rem;
+}
+/* ---------- reveal ---------- */
+.rev{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rev.in{opacity:1;transform:none}
+@media(min-width:760px){
+  .pillar{grid-template-columns:110px 1fr;gap:1.6rem;align-items:start}
+  .foot{flex-direction:row;justify-content:space-between;align-items:center}
+}
+@media(max-width:759px){
+  .sticky-cta{display:block}
+  footer{padding-bottom:8.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+  h1.display .w>span{transform:none;opacity:1}
+  .rev{opacity:1;transform:none}
+  .sticky-cta{transition:none}
+}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="./" aria-label="SDM home">
+      <span class="mark" aria-hidden="true">s</span>
+      <span class="word">SDM</span>
+    </a>
+    <a class="by" href="https://wearedogs.net">BY DOGS</a>
+  </div>
+</header>
+
+<main id="content">
+  <section class="hero" aria-label="Introduction">
+    <canvas id="flies" aria-hidden="true"></canvas>
+    <div class="wrap inner">
+      <p class="kicker">A dating app &mdash; in the works</p>
+      <h1 class="display" aria-label="Sex. Drugs. Music.">
+        <span class="w"><span>Sex.</span></span>
+        <span class="w"><span>Drugs.</span></span>
+        <span class="w"><span>Music.</span></span>
+      </h1>
+      <p class="lede">A dating app for the <em>animals in the jungle</em>. The city after dark, as a dating pool.</p>
+      <p class="status"><b>18+.</b> ID-verified. Not launched yet.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="https://github.com/YEAHDOGS/sdm">Follow the build</a>
+        <a class="btn ghost" href="#pillars">The idea</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars" aria-label="The three pillars">
+    <div class="wrap">
+      <div class="sec-head rev">
+        <span class="n">01</span>
+        <h2>Three signals. One animal.</h2>
+      </div>
+
+      <article class="pillar rev">
+        <div class="idx" aria-hidden="true">i</div>
+        <div>
+          <h3>Music</h3>
+          <p>Match on the <strong>music you live to</strong>. Your listening builds a sonic fingerprint: a vibe score and one shared playlist, not a photo grid.</p>
+        </div>
+      </article>
+
+      <article class="pillar rev">
+        <div class="idx" aria-hidden="true">ii</div>
+        <div>
+          <h3>Sex</h3>
+          <p><strong>Compatibility on your terms.</strong> Opt-in preference matching, explained out loud, never exposed. Your answers stay yours.</p>
+        </div>
+      </article>
+
+      <article class="pillar rev">
+        <div class="idx" aria-hidden="true">iii</div>
+        <div>
+          <h3>Drugs</h3>
+          <p>Your vices are a <strong>signal, not a transaction</strong>. Preferences feed matching. Buying or selling anything gets you banned.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="talk" aria-label="Less swiping, more talking">
+    <div class="wrap">
+      <div class="sec-head rev">
+        <span class="n">02</span>
+        <h2>How it moves</h2>
+      </div>
+      <p class="big rev">Less swiping, <span class="hl">more talking.</span></p>
+      <p class="sub rev">Random text, voice, and video chat. Chatrooms anchored to shows, venues, and scenes. The jungle is the city after dark: concerts, afterparties, late-night diners. Find your pack.</p>
+    </div>
+  </section>
+
+  <section aria-label="Safety">
+    <div class="wrap">
+      <div class="sec-head rev">
+        <span class="n">03</span>
+        <h2>Built like it matters</h2>
+      </div>
+      <div class="safe rev">
+        <div class="row"><span class="t">ID-verified</span><p>Every account backed by a real ID. No bots, no catfish, no burner armies.</p></div>
+        <div class="row"><span class="t">18+ only</span><p>A hard gate before any social feature. Not a checkbox, a verification.</p></div>
+        <div class="row"><span class="t">Private by design</span><p>Sensitive answers are encrypted, minimized, and deletable for real.</p></div>
+        <div class="row"><span class="t">US only</span><p>One country at launch, so safety and moderation stay tight.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" aria-label="Questions">
+    <div class="wrap">
+      <div class="sec-head rev">
+        <span class="n">04</span>
+        <h2>Questions</h2>
+      </div>
+      <details class="rev">
+        <summary>Is sdm live?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Not yet. This page is the stake in the ground while the app is being built. Follow the build on GitHub for progress.</p>
+      </details>
+      <details class="rev">
+        <summary>What does it match on?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Music first: your listening builds a sonic fingerprint. Then opt-in compatibility on sexual preferences and vices. Every match is explained, never exposed.</p>
+      </details>
+      <details class="rev">
+        <summary>Is it really 18+?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Strictly. ID verification gates every social feature. The name is rock and roll attitude; the age gate is not.</p>
+      </details>
+      <details class="rev">
+        <summary>What about the drugs part?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Preferences are a compatibility signal. Buying, selling, or facilitating anything is a ban. Full stop.</p>
+      </details>
+      <details class="rev">
+        <summary>When and where?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>US only at launch. One beta city first, then the rest of the jungle. Timing will be announced here.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="made">This product was made by <a href="https://wearedogs.net">DOGS</a></p>
+    <nav class="links" aria-label="Footer">
+      <a href="./privacy.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="https://github.com/YEAHDOGS/sdm">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="https://github.com/YEAHDOGS/sdm" tabindex="-1">Follow the build</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- fireflies: one canvas, pause offscreen/hidden, skip if reduced motion ---- */
+  var cv = document.getElementById("flies");
+  if (cv && !reduced) {
+    var ctx = cv.getContext("2d"), W = 0, H = 0, flies = [], running = false, raf = 0;
+    function size(){
+      var r = cv.parentElement.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width; H = r.height;
+      cv.width = W * dpr; cv.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function seed(){
+      flies = [];
+      var n = Math.min(44, Math.floor(W * H / 26000));
+      for (var i = 0; i < n; i++) {
+        flies.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: 1 + Math.random() * 2.4,
+          vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .22,
+          ph: Math.random() * Math.PI * 2, sp: .4 + Math.random() * .9,
+          amber: Math.random() < .45
+        });
+      }
+    }
+    function frame(t){
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < flies.length; i++) {
+        var f = flies[i];
+        f.x += f.vx; f.y += f.vy; f.ph += .016 * f.sp;
+        if (f.x < -8) f.x = W + 8; if (f.x > W + 8) f.x = -8;
+        if (f.y < -8) f.y = H + 8; if (f.y > H + 8) f.y = -8;
+        var a = .25 + .55 * (0.5 + 0.5 * Math.sin(f.ph));
+        var g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 4);
+        var c = f.amber ? "240,165,60" : "170,220,150";
+        g.addColorStop(0, "rgba(" + c + "," + a.toFixed(3) + ")");
+        g.addColorStop(1, "rgba(" + c + ",0)");
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(f.x, f.y, f.r * 4, 0, 6.2832); ctx.fill();
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if (!running) { running = true; raf = requestAnimationFrame(frame); } }
+    function stop(){ if (running) { running = false; cancelAnimationFrame(raf); } }
+    size(); seed(); start();
+    window.addEventListener("resize", function(){ size(); seed(); });
+    document.addEventListener("visibilitychange", function(){ document.hidden ? stop() : start(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? start() : stop(); }); }).observe(cv);
+    }
+  }
+
+  /* ---- scroll reveals ---- */
+  var revs = document.querySelectorAll(".rev");
+  if ("IntersectionObserver" in window && !reduced) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e, i){
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = Math.min(e.target.getAttribute("data-d") || 0, 300) + "ms";
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
+    revs.forEach(function(el){ io.observe(el); });
+  } else {
+    revs.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- sticky mobile cta: show after hero ---- */
+  var sticky = document.getElementById("stickyCta");
+  var hero = document.querySelector(".hero");
+  if (sticky && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ sticky.classList.toggle("show", !e.isIntersecting); });
+    }, { threshold: 0 }).observe(hero);
+    sticky.setAttribute("aria-hidden", "false");
+  }
+
+  /* ---- faq +/- toggle glyph ---- */
+  document.querySelectorAll(".faq details").forEach(function(d){
+    var pm = d.querySelector(".pm");
+    d.addEventListener("toggle", function(){ if (pm) pm.textContent = d.open ? "\u2013" : "+"; });
+  });
+})();
+</script>
+</body>
+</html>
