@@ -1,4 +1,8 @@
-# SDM — DESIGN.md v2 (2026-09-11)
+# SDM — DESIGN.md v3 (2026-09-11)
+
+v3 = the happy medium: v2 snap panels + short punchy lines (2 per panel),
++ asymmetric placement (top / bottom / right / mid — nothing forced center),
++ parallax bg drift + staggered clip reveals on entry.
 
 Brandon's style, learned from wearedogs.net: full-screen Y-scroll-snap panels,
 one giant idea per screen, almost no text. Images carry the weight.

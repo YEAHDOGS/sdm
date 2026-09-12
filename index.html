@@ -37,105 +37,159 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-
 ::-webkit-scrollbar-thumb{background:#232b29;border-radius:8px}
 
 .panel{position:relative;height:100vh;height:100svh;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;display:flex}
-.panel img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.panel .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,11,.55) 0%,rgba(7,9,11,.15) 40%,rgba(7,9,11,.72) 100%)}
-.inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,6vw,48px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(56px,10vh,110px)}
-.word{font-family:var(--display);font-size:clamp(88px,26vw,300px);line-height:.9;text-transform:uppercase;letter-spacing:.01em}
-.micro{margin-top:18px;font-size:12px;letter-spacing:.22em;font-weight:500;color:var(--mut);text-transform:uppercase}
+.panel img.bg{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
+.scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,11,.62) 0%,rgba(7,9,11,.12) 42%,rgba(7,9,11,.78) 100%)}
+.scrim.top{background:linear-gradient(180deg,rgba(7,9,11,.78) 0%,rgba(7,9,11,.12) 55%,rgba(7,9,11,.62) 100%)}
+.inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,6vw,48px);display:flex;flex-direction:column}
+.pad-b{justify-content:flex-end;padding-bottom:clamp(64px,11vh,120px)}
+.pad-t{justify-content:flex-start;padding-top:clamp(84px,14vh,140px)}
+.pad-m{justify-content:center}
+.right{align-items:flex-end;text-align:right}
+
+.word{font-family:var(--display);font-size:clamp(84px,25vw,290px);line-height:.88;text-transform:uppercase;letter-spacing:.01em}
+.lines{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.lines.right{align-items:flex-end}
+.line{display:block;overflow:hidden}
+.line>span{display:block;font-size:clamp(17px,4.6vw,26px);font-weight:500;letter-spacing:.01em;color:var(--ink);transform:translateY(110%);transition:transform .8s var(--ease)}
+.in .line>span{transform:none}
+.in .line:nth-child(1)>span{transition-delay:.15s}
+.in .line:nth-child(2)>span{transition-delay:.27s}
+.in .line:nth-child(3)>span{transition-delay:.39s}
+.micro{margin-top:20px;font-size:12px;letter-spacing:.22em;font-weight:500;color:var(--mut);text-transform:uppercase;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease) .5s,transform .6s var(--ease) .5s}
+.in .micro{opacity:1;transform:none}
+.w{display:block;overflow:hidden}
+.w>span{display:block;transform:translateY(102%) scale(.96);transition:transform .9s var(--ease)}
+.in .w>span{transform:none}
+
 .tag{position:absolute;z-index:2;top:calc(env(safe-area-inset-top,0px) + 22px);left:clamp(20px,6vw,48px);font-size:11px;letter-spacing:.24em;color:var(--mut);font-weight:600}
 .tag b{color:var(--rose);font-weight:600}
+.kick{font-size:12px;letter-spacing:.3em;font-weight:600;color:var(--amber);text-transform:uppercase;margin-bottom:14px;opacity:0;transition:opacity .6s var(--ease) .1s}
+.in .kick{opacity:1}
 
-/* panel 1 scroll hint */
-.hint{position:absolute;z-index:2;bottom:26px;left:50%;transform:translateX(-50%);width:22px;height:34px;border:1.5px solid var(--dim);border-radius:12px}
+.hint{position:absolute;z-index:2;bottom:24px;left:50%;transform:translateX(-50%);width:22px;height:34px;border:1.5px solid var(--dim);border-radius:12px}
 .hint::after{content:"";position:absolute;top:7px;left:50%;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--amber);animation:drop 1.8s var(--ease) infinite}
 @keyframes drop{0%{transform:translateY(0);opacity:1}70%{transform:translateY(10px);opacity:0}100%{opacity:0}}
 
-/* panel 4 — talk first */
-.talk{background:var(--bg);align-items:center}
-#eq{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
-.talk .inner{justify-content:center;padding-bottom:0;text-align:left}
-.talk .word{font-size:clamp(64px,17vw,200px)}
-.talk .word .r{color:var(--rose)} .talk .word .a{color:var(--amber)}
+.talk{background:var(--bg)}
+#eq{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
 
-/* panel 5 — waitlist */
-.join{background:var(--bg);align-items:center}
-.join .inner{justify-content:center;padding-bottom:0}
-.join .word{font-size:clamp(72px,20vw,240px);color:var(--ink)}
+.rules{background:#0a0d10}
+.rule-row{display:flex;align-items:baseline;gap:18px;padding:20px 0;border-bottom:1px solid #1a2120;overflow:hidden}
+.rule-row:last-child{border-bottom:0}
+.rule-num{font-family:var(--display);font-size:15px;color:var(--rose);min-width:34px}
+.rule-txt{font-size:clamp(19px,5.4vw,30px);font-weight:500;transform:translateY(110%);transition:transform .8s var(--ease)}
+.in .rule-row:nth-child(1) .rule-txt{transition-delay:.15s}
+.in .rule-row:nth-child(2) .rule-txt{transition-delay:.27s}
+.in .rule-row:nth-child(3) .rule-txt{transition-delay:.39s}
+.in .rule-txt{transform:none}
+
+.join{background:var(--bg)}
 .join .word em{font-style:normal;color:var(--rose)}
-form.wait{margin-top:34px;max-width:440px}
+form.wait{margin-top:32px;max-width:460px;width:100%}
 .wait-row{display:flex;gap:10px}
 .wait input{flex:1;min-width:0;background:#0c1013;border:1px solid #1d2422;border-radius:14px;color:var(--ink);font:inherit;font-size:16px;padding:16px 18px}
 .wait input::placeholder{color:var(--dim)}
 .wait input:focus{border-color:var(--rose);outline:none}
-.wait button{cursor:pointer;border:0;border-radius:14px;background:var(--ember);color:#fff;font:inherit;font-weight:600;font-size:16px;padding:16px 24px;transition:transform .18s var(--ease),background .18s}
+.wait button{cursor:pointer;border:0;border-radius:14px;background:var(--ember);color:#fff;font:inherit;font-weight:600;font-size:18px;padding:16px 24px;transition:transform .18s var(--ease),background .18s}
 .wait button:hover{background:var(--rose);transform:translateY(-2px)}
 .wait-done{display:none;margin-top:4px;font-size:15px;color:var(--ink)}
 .wait-done.show{display:block}
 label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-/* panel 6 — footer */
 .outro{background:var(--bg);align-items:center;justify-content:center;text-align:center}
-.outro .inner{justify-content:center;align-items:center;padding-bottom:0;text-align:center}
+.outro .inner{justify-content:center;align-items:center;text-align:center}
 .outro p{font-size:13px;color:var(--dim);letter-spacing:.06em;line-height:2.2}
 .outro a{color:var(--mut);text-decoration:none;border-bottom:1px solid #2a332f}
 .outro a:hover{color:var(--ink);border-color:var(--rose)}
 .outro .dogs{color:var(--amber);font-weight:600;font-size:14px}
 .outro .big{font-family:var(--display);font-size:clamp(40px,10vw,90px);color:#161d1b;text-transform:uppercase;line-height:1;margin-bottom:26px;user-select:none}
 
-/* entrance */
-.rise{opacity:0;transform:translateY(36px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rise.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .hint::after{animation:none}
   #eq{display:none}
-  .rise{opacity:1;transform:none;transition:none}
+  .line>span,.w>span,.rule-txt{transform:none;transition:none}
+  .micro,.kick{opacity:1;transform:none;transition:none}
+  .panel img.bg{inset:0;height:100%}
 }
 </style>
 </head>
 <body>
 
 <section class="panel" aria-label="Sex">
-  <img class="bg" src="./img/panel-sex.jpg" alt="" fetchpriority="high">
+  <img class="bg" src="./img/panel-sex.jpg" alt="" fetchpriority="high" data-plx>
   <div class="scrim"></div>
   <span class="tag"><b>18+</b> · ID-VERIFIED</span>
-  <div class="inner rise">
-    <h1 class="word" style="color:var(--rose)">Sex.</h1>
-    <p class="micro">A dating app for the animals in the jungle</p>
+  <div class="inner pad-b rise">
+    <h1 class="word w" style="color:var(--rose)"><span>Sex.</span></h1>
+    <div class="lines">
+      <span class="line"><span>Say what you want.</span></span>
+      <span class="line"><span>Match on it. Skip the small talk.</span></span>
+    </div>
+    <p class="micro">Your taste profile does the flirting</p>
   </div>
   <div class="hint" aria-hidden="true"></div>
 </section>
 
 <section class="panel" aria-label="Drugs">
-  <img class="bg" src="./img/panel-drugs.jpg" alt="" loading="lazy">
-  <div class="scrim"></div>
-  <div class="inner rise">
-    <h2 class="word" style="color:var(--amber)">Drugs.</h2>
-    <p class="micro">Preferences, not transactions</p>
+  <img class="bg" src="./img/panel-drugs.jpg" alt="" loading="lazy" data-plx>
+  <div class="scrim top"></div>
+  <div class="inner pad-t rise">
+    <p class="kick">Chemistry</p>
+    <h2 class="word w" style="color:var(--amber)"><span>Drugs.</span></h2>
+    <div class="lines">
+      <span class="line"><span>Your preferences, out in the open.</span></span>
+      <span class="line"><span>Signals, not transactions.</span></span>
+    </div>
+    <p class="micro">A judgment-free zone</p>
   </div>
 </section>
 
 <section class="panel" aria-label="Music">
-  <img class="bg" src="./img/panel-music.jpg" alt="" loading="lazy">
+  <img class="bg" src="./img/panel-music.jpg" alt="" loading="lazy" data-plx>
   <div class="scrim"></div>
-  <div class="inner rise">
-    <h2 class="word" style="color:var(--ink)">Music.</h2>
-    <p class="micro">Your top artists do the talking</p>
+  <div class="inner pad-b rise">
+    <div class="right">
+      <h2 class="word w" style="color:var(--ink)"><span>Music.</span></h2>
+      <div class="lines right">
+        <span class="line"><span>Your top artists do the talking.</span></span>
+        <span class="line"><span>Same rotation. Same wavelength.</span></span>
+      </div>
+      <p class="micro">Link your streaming, skip the bio</p>
+    </div>
   </div>
 </section>
 
 <section class="panel talk" aria-label="Talk first">
   <canvas id="eq" aria-hidden="true"></canvas>
-  <div class="inner rise">
-    <h2 class="word"><span class="r">Talk</span><br><span class="a">first.</span></h2>
-    <p class="micro">Less swiping · more talking · real humans only</p>
+  <div class="inner pad-m rise">
+    <h2 class="word w" style="font-size:clamp(64px,17vw,200px)"><span><span style="color:var(--rose)">Talk</span><br><span style="color:var(--amber)">first.</span></span></h2>
+    <div class="lines">
+      <span class="line"><span>Less swiping. More talking.</span></span>
+      <span class="line"><span>Real humans only — verified at the door.</span></span>
+    </div>
+    <p class="micro">No bots · no catfish · no ghosts</p>
+  </div>
+</section>
+
+<section class="panel rules" aria-label="The rules">
+  <div class="inner pad-m rise">
+    <p class="kick">The jungle has rules</p>
+    <div>
+      <div class="rule-row"><span class="rule-num">01</span><span class="rule-txt">Adults only. Verified.</span></div>
+      <div class="rule-row"><span class="rule-num">02</span><span class="rule-txt">Consent is the whole game.</span></div>
+      <div class="rule-row"><span class="rule-num">03</span><span class="rule-txt">Stays in the jungle.</span></div>
+    </div>
   </div>
 </section>
 
 <section class="panel join" aria-label="Join the waitlist">
-  <div class="inner rise">
-    <h2 class="word">Get <em>in.</em></h2>
-    <p class="micro">One email when the gates open</p>
+  <div class="inner pad-m rise">
+    <h2 class="word w">Get <em>in.</em></h2>
+    <div class="lines">
+      <span class="line"><span>One email when the gates open.</span></span>
+      <span class="line"><span>First wave gets founding-animal status.</span></span>
+    </div>
     <form class="wait" id="wait" novalidate>
       <label class="sr" for="email">Email address</label>
       <div class="wait-row">
@@ -203,6 +257,24 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
     document.querySelectorAll(".rise").forEach(function(el){ io.observe(el); });
   } else {
     document.querySelectorAll(".rise").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  if (!reduce){
+    var plx = Array.prototype.slice.call(document.querySelectorAll("[data-plx]"));
+    var ticking = false;
+    function update(){
+      ticking = false;
+      var vh = window.innerHeight;
+      for (var i = 0; i < plx.length; i++){
+        var r = plx[i].parentElement.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) continue;
+        var prog = (r.top + r.height / 2 - vh / 2) / vh;
+        plx[i].style.transform = "translate3d(0," + (prog * -70).toFixed(1) + "px,0)";
+      }
+    }
+    window.addEventListener("scroll", function(){ if (!ticking){ ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   var f = document.getElementById("wait");
