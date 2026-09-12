@@ -83,8 +83,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-
 .in .rule-row:nth-child(3) .rule-txt{transition-delay:.39s}
 .in .rule-txt{transform:none}
 
-.join{background:var(--bg)}
-.join .word em{font-style:normal;color:var(--rose)}
+.finale{background:var(--bg);flex-direction:column}
+.finale .word em{font-style:normal;color:var(--rose)}
+.finale-top{flex:1}
+.finale-foot{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,6vw,48px) calc(env(safe-area-inset-bottom,0px) + 26px);text-align:center}
+.finale-foot img{display:block;width:min(400px,78vw);height:auto;margin:0 auto;border-radius:6px}
+.finale-foot .fine{margin-top:14px;font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.finale-foot .fine a{color:var(--mut);text-decoration:none}
+.finale-foot .fine a:hover{color:var(--ink)}
 form.wait{margin-top:32px;max-width:460px;width:100%}
 .wait-row{display:flex;gap:10px}
 .wait input{flex:1;min-width:0;background:#0c1013;border:1px solid #1d2422;border-radius:14px;color:var(--ink);font:inherit;font-size:16px;padding:16px 18px}
@@ -95,14 +101,6 @@ form.wait{margin-top:32px;max-width:460px;width:100%}
 .wait-done{display:none;margin-top:4px;font-size:15px;color:var(--ink)}
 .wait-done.show{display:block}
 label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-
-.outro{background:var(--bg);align-items:center;justify-content:center;text-align:center}
-.outro .inner{justify-content:center;align-items:center;text-align:center}
-.outro p{font-size:13px;color:var(--dim);letter-spacing:.06em;line-height:2.2}
-.outro a{color:var(--mut);text-decoration:none;border-bottom:1px solid #2a332f}
-.outro a:hover{color:var(--ink);border-color:var(--rose)}
-.outro .dogs{color:var(--amber);font-weight:600;font-size:14px}
-.outro .big{font-family:var(--display);font-size:clamp(40px,10vw,90px);color:#161d1b;text-transform:uppercase;line-height:1;margin-bottom:26px;user-select:none}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -117,7 +115,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
 <body>
 
 <section class="panel" aria-label="Sex">
-  <img class="bg" src="./img/panel-sex.jpg" alt="" fetchpriority="high" data-plx>
+  <img class="bg" src="./img/girl-sex.jpg" alt="" fetchpriority="high" data-plx>
   <div class="scrim"></div>
   <span class="tag"><b>18+</b> · ID-VERIFIED</span>
   <div class="inner pad-b rise">
@@ -146,7 +144,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
 </section>
 
 <section class="panel" aria-label="Music">
-  <img class="bg" src="./img/panel-music.jpg" alt="" loading="lazy" data-plx>
+  <img class="bg" src="./img/girl-music.jpg" alt="" loading="lazy" data-plx>
   <div class="scrim"></div>
   <div class="inner pad-b rise">
     <div class="right">
@@ -183,8 +181,8 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
   </div>
 </section>
 
-<section class="panel join" aria-label="Join the waitlist">
-  <div class="inner pad-m rise">
+<section class="panel finale" aria-label="Join the waitlist">
+  <div class="inner pad-t rise finale-top">
     <h2 class="word w">Get <em>in.</em></h2>
     <div class="lines">
       <span class="line"><span>One email when the gates open.</span></span>
@@ -199,19 +197,11 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
       <p class="wait-done" role="status">You're in. Watch your inbox.</p>
     </form>
   </div>
+  <footer class="finale-foot">
+    <a href="https://wearedogs.net" aria-label="Made by DOGS"><img src="./img/made-by-dogs.png" alt="This product was made by DOGS" width="1200" height="397"></a>
+    <p class="fine"><a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · SDM is the codename · 18+ only</p>
+  </footer>
 </section>
-
-<footer class="panel outro" aria-label="About">
-  <div class="inner">
-    <div class="big" aria-hidden="true">SDM</div>
-    <p>
-      <span class="dogs">This product was made by <a href="https://wearedogs.net">DOGS</a></span><br>
-      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a><br>
-      SDM is the codename. The jungle gets a real name before launch.<br>
-      18+ only.
-    </p>
-  </div>
-</footer>
 
 <script>
 (function(){
