@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SDM — Sex. Drugs. Music.</title>
+<title>SDM: Sex. Drugs. Music.</title>
 <meta name="description" content="SDM. A dating app for the animals in the jungle. 18+.">
 <meta name="theme-color" content="#07090b">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://yeahdogs.github.io/sdm/">
 <meta property="og:site_name" content="SDM">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SDM — Sex. Drugs. Music.">
+<meta property="og:title" content="SDM: Sex. Drugs. Music.">
 <meta property="og:description" content="A dating app for the animals in the jungle. 18+.">
 <meta property="og:url" content="https://yeahdogs.github.io/sdm/">
 <meta property="og:image" content="https://yeahdogs.github.io/sdm/og.png">
@@ -23,7 +23,7 @@
 <style>
 :root{
   --bg:#07090b; --ink:#f5efe4; --mut:#9aa39b; --dim:#5c655f;
-  --rose:#e11d48; --amber:#f0a53c; --ember:#ea580c;
+  --rose:#e11d48; --amber:#f0a53c;
   --display:"Righteous",system-ui,sans-serif; --body:"Poppins",system-ui,sans-serif;
   --ease:cubic-bezier(0.22,1,0.36,1);
 }
@@ -66,9 +66,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-
 .kick{font-size:12px;letter-spacing:.3em;font-weight:600;color:var(--amber);text-transform:uppercase;margin-bottom:14px;opacity:0;transition:opacity .6s var(--ease) .1s}
 .in .kick{opacity:1}
 
-.hint{position:absolute;z-index:2;bottom:24px;left:50%;transform:translateX(-50%);width:22px;height:34px;border:1.5px solid var(--dim);border-radius:12px}
-.hint::after{content:"";position:absolute;top:7px;left:50%;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--amber);animation:drop 1.8s var(--ease) infinite}
-@keyframes drop{0%{transform:translateY(0);opacity:1}70%{transform:translateY(10px);opacity:0}100%{opacity:0}}
+/* Parallax: CSS scroll-driven, no JS scroll listener (prefers-reduced-motion respected) */
+@keyframes plx{from{transform:translate3d(0,-4%,0)}to{transform:translate3d(0,4%,0)}}
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .panel img.bg{animation:plx linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+  }
+}
 
 .talk{background:var(--bg)}
 #eq{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
@@ -96,17 +100,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-
 form.wait{margin-top:32px;max-width:460px;width:100%}
 .wait-row{display:flex;gap:10px}
 .wait input{flex:1;min-width:0;background:#0c1013;border:1px solid #1d2422;border-radius:14px;color:var(--ink);font:inherit;font-size:16px;padding:16px 18px}
-.wait input::placeholder{color:var(--dim)}
+.wait input::placeholder{color:var(--mut)}
 .wait input:focus{border-color:var(--rose);outline:none}
-.wait button{cursor:pointer;border:0;border-radius:14px;background:var(--ember);color:#fff;font:inherit;font-weight:600;font-size:18px;padding:16px 24px;transition:transform .18s var(--ease),background .18s}
-.wait button:hover{background:var(--rose);transform:translateY(-2px)}
+.wait button{cursor:pointer;border:0;border-radius:14px;background:var(--rose);color:#fff;font:inherit;font-weight:600;font-size:18px;padding:16px 24px;transition:transform .18s var(--ease),background .18s}
+.wait button:hover{background:#be123c;transform:translateY(-2px)}
 .wait-done{display:none;margin-top:4px;font-size:15px;color:var(--ink)}
 .wait-done.show{display:block}
 label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .hint::after{animation:none}
   #eq{display:none}
   .line>span,.w>span,.rule-txt{transform:none;transition:none}
   .micro,.kick{opacity:1;transform:none;transition:none}
@@ -117,7 +120,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
 <body>
 
 <section class="panel" aria-label="Sex">
-  <img class="bg" src="./img/girl-sex.jpg" alt="" fetchpriority="high" data-plx>
+  <img class="bg" src="./img/girl-sex.jpg" alt="" fetchpriority="high">
   <div class="scrim"></div>
   <span class="tag"><b>18+</b> · ID-VERIFIED</span>
   <div class="inner pad-b rise">
@@ -128,11 +131,10 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
     </div>
     <p class="micro">Your taste profile does the flirting</p>
   </div>
-  <div class="hint" aria-hidden="true"></div>
 </section>
 
 <section class="panel" aria-label="Drugs">
-  <img class="bg" src="./img/panel-drugs.jpg" alt="" loading="lazy" data-plx>
+  <img class="bg" src="./img/panel-drugs.jpg" alt="" loading="lazy">
   <div class="scrim top"></div>
   <div class="inner pad-t rise">
     <p class="kick">Chemistry</p>
@@ -146,7 +148,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
 </section>
 
 <section class="panel" aria-label="Music">
-  <img class="bg" src="./img/girl-music.jpg" alt="" loading="lazy" data-plx>
+  <img class="bg" src="./img/girl-music.jpg" alt="" loading="lazy">
   <div class="scrim"></div>
   <div class="inner pad-b rise">
     <div class="right">
@@ -166,7 +168,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
     <h2 class="word w" style="font-size:clamp(54px,14vw,150px)"><span><span style="color:var(--rose)">Talk</span> <span style="color:var(--amber)">first.</span></span></h2>
     <div class="lines">
       <span class="line"><span>Less swiping. More talking.</span></span>
-      <span class="line"><span>Real humans only — verified at the door.</span></span>
+      <span class="line"><span>Real humans only. Verified at the door.</span></span>
     </div>
     <div class="mini-rules">
       <div class="rule-row"><span class="rule-num">01</span><span class="rule-txt">Adults only. Verified.</span></div>
@@ -194,7 +196,7 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
   </div>
   <footer class="finale-foot">
     <a href="https://wearedogs.net" aria-label="Made by DOGS"><img src="./img/made-by-dogs.png" alt="This product was made by DOGS" width="1200" height="397"></a>
-    <p class="fine"><a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · 18+ only</p>
+    <p class="fine"><a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></p>
   </footer>
 </section>
 
@@ -242,24 +244,6 @@ label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 
     document.querySelectorAll(".rise").forEach(function(el){ io.observe(el); });
   } else {
     document.querySelectorAll(".rise").forEach(function(el){ el.classList.add("in"); });
-  }
-
-  if (!reduce){
-    var plx = Array.prototype.slice.call(document.querySelectorAll("[data-plx]"));
-    var ticking = false;
-    function update(){
-      ticking = false;
-      var vh = window.innerHeight;
-      for (var i = 0; i < plx.length; i++){
-        var r = plx[i].parentElement.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > vh) continue;
-        var prog = (r.top + r.height / 2 - vh / 2) / vh;
-        plx[i].style.transform = "translate3d(0," + (prog * -70).toFixed(1) + "px,0)";
-      }
-    }
-    window.addEventListener("scroll", function(){ if (!ticking){ ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener("resize", update);
-    update();
   }
 
   var f = document.getElementById("wait");
