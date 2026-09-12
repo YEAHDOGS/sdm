@@ -4,389 +4,329 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SDM — Sex. Drugs. Music. A dating app by DOGS</title>
-<meta name="description" content="SDM (Sex, Drugs, Music) is a dating app for the animals in the jungle. Music-first matching, opt-in compatibility, 18+ and ID-verified. In the works.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#070c07">
+<meta name="description" content="SDM is a dating app for the animals in the jungle. Music-first matching, opt-in chemistry, ID-verified humans. 18+ only. Join the waitlist.">
+<meta name="theme-color" content="#07090b">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./favicon.svg">
 <link rel="canonical" href="https://yeahdogs.github.io/sdm/">
 <meta property="og:site_name" content="SDM">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SDM — Sex. Drugs. Music.">
-<meta property="og:description" content="A dating app for the animals in the jungle. Music-first matching, opt-in compatibility, 18+ and ID-verified.">
+<meta property="og:description" content="A dating app for the animals in the jungle. Music-first matching, opt-in chemistry, ID-verified humans. 18+.">
 <meta property="og:url" content="https://yeahdogs.github.io/sdm/">
 <meta property="og:image" content="https://yeahdogs.github.io/sdm/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="SDM — Sex. Drugs. Music. A dating app for the animals in the jungle.">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#070c07;
-  --bg2:#0b120b;
-  --ink:#f3eddd;
-  --mut:#a7b096;
-  --amber:#f0a53c;
-  --amber-soft:#f5c069;
-  --line:#1c2b1a;
-  --serif:Georgia,"Nimbus Roman No9 L","Times New Roman",serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --bg:#07090b; --bg2:#0c1013; --ink:#f5efe4; --mut:#9aa39b; --line:#1d2422;
+  --rose:#e11d48; --rose-deep:#881337; --amber:#f0a53c; --ember:#ea580c;
+  --display:"Righteous",system-ui,sans-serif; --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(0.22,1,0.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--sans);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-}
-::selection{background:var(--amber);color:#0a0a06}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--rose);color:#fff}
 a{color:inherit}
-.skip{position:absolute;left:-9999px;top:0;background:var(--amber);color:#0a0a06;padding:.6rem 1rem;z-index:100;font-weight:700}
-.skip:focus{left:0}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-header.site{
-  position:fixed;inset:0 0 auto 0;z-index:50;
-  background:color-mix(in srgb,var(--bg) 82%,transparent);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;height:58px}
-.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
-.brand .mark{
-  width:30px;height:30px;border-radius:50%;background:var(--amber);color:#0a0a06;
-  font-family:var(--serif);font-weight:700;font-style:italic;font-size:1rem;
-  display:grid;place-items:center;line-height:1;
-}
-.brand .word{font-family:var(--mono);font-size:.8rem;letter-spacing:.28em;color:var(--ink)}
-.nav .by{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem}
-.nav .by:hover{color:var(--amber);border-color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#232b29;border-radius:8px}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,32px);padding-right:clamp(20px,5vw,32px)}
+section{padding-top:clamp(72px,12vw,144px);padding-bottom:clamp(72px,12vw,144px)}
+
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 64px;overflow:hidden}
-#flies{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero .inner{position:relative;z-index:2;width:100%}
-.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--amber);text-transform:uppercase;margin-bottom:1.1rem}
-h1.display{
-  font-family:var(--serif);font-style:italic;font-weight:700;
-  font-size:clamp(3.4rem,17vw,10rem);line-height:.94;letter-spacing:-.02em;
-  text-wrap:balance;
-}
-h1.display .w{display:inline-block;overflow:hidden;vertical-align:bottom}
-h1.display .w>span{display:inline-block;transform:translateY(110%);opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
-h1.display .w:nth-child(2)>span{animation-delay:.12s}
-h1.display .w:nth-child(3)>span{animation-delay:.24s}
-@keyframes rise{to{transform:translateY(0);opacity:1}}
-.lede{margin-top:1.4rem;max-width:34ch;font-size:1.15rem;color:var(--ink)}
-.lede em{font-family:var(--serif);color:var(--amber-soft)}
-.status{margin-top:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--mut);text-transform:uppercase}
-.status b{color:var(--amber);font-weight:600}
-.cta-row{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap}
-.btn{
-  display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;
-  padding:.95rem 1.7rem;border-radius:6px;transition:transform .18s ease,background .18s ease,color .18s ease;
-}
-.btn.solid{background:var(--amber);color:#0a0a06}
-.btn.solid:hover{background:var(--amber-soft)}
-.btn.solid:active{transform:scale(.97)}
-.btn.ghost{border:1px solid var(--line);color:var(--ink)}
-.btn.ghost:hover{border-color:var(--amber);color:var(--amber)}
-.btn.ghost:active{transform:scale(.97)}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(48px,8vh,96px)}
+#eq{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 110%,transparent 40%,var(--bg) 78%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:100%}
+.age{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--mut);margin-bottom:28px;background:rgba(7,9,11,.6);backdrop-filter:blur(6px)}
+.age .dot{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 12px var(--rose)}
+h1{font-family:var(--display);font-size:clamp(64px,17vw,180px);line-height:.94;letter-spacing:.01em;text-transform:uppercase}
+h1 .w{display:block}
+h1 .rose{color:var(--rose)} h1 .amber{color:var(--amber)} h1 .bone{color:var(--ink)}
+.lede{margin-top:28px;max-width:34ch;font-size:clamp(17px,2.4vw,21px);color:var(--mut);font-weight:300}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* waitlist form */
+.wait{margin-top:36px;max-width:520px}
+.wait label{display:block;font-size:13px;letter-spacing:.1em;font-weight:600;color:var(--mut);margin-bottom:10px}
+.wait-row{display:flex;gap:10px}
+.wait input{flex:1;min-width:0;background:var(--bg2);border:1px solid var(--line);border-radius:14px;color:var(--ink);font:inherit;padding:15px 18px}
+.wait input::placeholder{color:#5c655f}
+.wait input:focus{border-color:var(--rose);outline:none}
+.wait button{cursor:pointer;border:0;border-radius:14px;background:var(--ember);color:#fff;font:inherit;font-weight:600;padding:15px 26px;white-space:nowrap;transition:transform .18s var(--ease),background .18s}
+.wait button:hover{background:var(--rose);transform:translateY(-2px)}
+.wait button:active{transform:translateY(0)}
+.wait-note{margin-top:12px;font-size:13px;color:#5c655f}
+.wait-done{display:none;border:1px solid var(--rose-deep);background:rgba(225,29,72,.08);border-radius:14px;padding:18px 20px;font-weight:500}
+.wait-done.show{display:block}
+.trust{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:13px;letter-spacing:.08em;color:var(--mut);font-weight:500}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:15px;height:15px;stroke:var(--amber);flex:none}
+
+/* ---------- ticker ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg2)}
+.ticker-track{display:flex;gap:56px;width:max-content;animation:tick 28s linear infinite;font-family:var(--display);font-size:20px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.ticker-track span:nth-child(odd){color:var(--ink)}
+.ticker-track span:nth-child(even){color:var(--rose)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}#eq{display:none}.reveal{opacity:1!important;transform:none!important}}
+
+/* ---------- statement ---------- */
+.statement h2{font-family:var(--display);font-size:clamp(34px,7vw,72px);line-height:1.08;max-width:20ch}
+.statement h2 em{font-style:normal;color:var(--amber)}
+.statement p{margin-top:28px;max-width:60ch;color:var(--mut);font-size:clamp(16px,2.2vw,19px);font-weight:300}
+
 /* ---------- pillars ---------- */
-section{padding:84px 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
-.sec-head .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--amber)}
-.sec-head h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.9rem,6vw,3rem);letter-spacing:-.01em}
-.pillar{display:grid;grid-template-columns:1fr;gap:.6rem;padding:2.2rem 0;border-top:1px solid var(--line)}
-.pillar .idx{font-family:var(--serif);font-style:italic;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--amber);opacity:.85}
-.pillar h3{font-family:var(--mono);font-size:.8rem;letter-spacing:.34em;color:var(--amber);text-transform:uppercase}
-.pillar p{font-size:1.25rem;max-width:30ch;line-height:1.45}
-.pillar p strong{font-family:var(--serif);font-style:italic;font-weight:700}
-/* ---------- talk / safety ---------- */
-.talk p.big{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.8rem,6.4vw,3.2rem);line-height:1.15;max-width:22ch}
-.talk p.big .hl{color:var(--amber)}
-.talk .sub{margin-top:1.2rem;color:var(--mut);max-width:44ch}
-.safe{display:grid;gap:0;margin-top:0}
-.safe .row{display:flex;gap:1rem;align-items:baseline;padding:1.1rem 0;border-top:1px solid var(--line);font-size:1rem}
-.safe .row .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;min-width:9.5rem;flex-shrink:0}
-.safe .row p{color:var(--ink)}
-/* ---------- faq ---------- */
-.faq details{border-top:1px solid var(--line);padding:1.2rem 0}
-.faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;list-style:none;font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .pm{font-family:var(--mono);font-style:normal;color:var(--amber);font-size:1.1rem;flex-shrink:0}
-.faq details p{margin-top:.7rem;color:var(--mut);max-width:52ch}
+.pillar{display:grid;gap:24px;padding:clamp(40px,6vw,72px) 0;border-top:1px solid var(--line)}
+.pillar:last-child{border-bottom:1px solid var(--line)}
+.pillar-word{font-family:var(--display);font-size:clamp(44px,9vw,96px);line-height:1;text-transform:uppercase}
+.pillar:nth-child(1) .pillar-word{color:var(--rose)}
+.pillar:nth-child(2) .pillar-word{color:var(--amber)}
+.pillar:nth-child(3) .pillar-word{color:var(--ink)}
+.pillar-body p{color:var(--mut);max-width:56ch;font-weight:300}
+.pillar-body p + p{margin-top:14px}
+.pillar-body strong{color:var(--ink);font-weight:600}
+@media(min-width:860px){
+  .pillar{grid-template-columns:1fr 1fr;align-items:start;gap:48px}
+  .pillar:nth-child(even) .pillar-word{order:2;text-align:right}
+}
+
+/* ---------- rules ---------- */
+.rules{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rules h2{font-family:var(--display);font-size:clamp(34px,7vw,72px);line-height:1.08;margin-bottom:16px}
+.rules h2 em{font-style:normal;color:var(--rose)}
+.rules > .wrap > p.lead{color:var(--mut);max-width:58ch;font-weight:300;margin-bottom:48px}
+.rule-list{list-style:none;display:grid;gap:0}
+.rule-list li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:26px 0;border-top:1px solid var(--line)}
+.rule-list li:last-child{border-bottom:1px solid var(--line)}
+.rule-list svg{width:26px;height:26px;stroke:var(--amber);margin-top:4px}
+.rule-list h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.rule-list p{color:var(--mut);font-weight:300;max-width:62ch;font-size:15px}
+
+/* ---------- final cta ---------- */
+.final h2{font-family:var(--display);font-size:clamp(40px,9vw,104px);line-height:1;text-transform:uppercase}
+.final h2 .rose{color:var(--rose)}
+.final p{margin:24px 0 32px;color:var(--mut);max-width:52ch;font-weight:300}
+
 /* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:3rem 0 6rem}
-.foot{display:flex;flex-direction:column;gap:1.4rem}
-.foot .links{display:flex;gap:1.4rem;flex-wrap:wrap}
-.foot .links a{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);text-decoration:none}
-.foot .links a:hover{color:var(--amber)}
-.made{font-size:.85rem;color:var(--mut)}
-.made a{color:var(--amber);text-decoration:none;font-weight:600}
-.made a:hover{text-decoration:underline}
-/* ---------- sticky mobile cta ---------- */
-.sticky-cta{
-  position:fixed;left:12px;right:12px;bottom:12px;z-index:55;
-  display:none;transform:translateY(140%);opacity:0;
-  transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s ease;
-}
-.sticky-cta.show{transform:translateY(0);opacity:1}
-.sticky-cta a{
-  display:block;text-align:center;text-decoration:none;font-weight:800;
-  background:var(--amber);color:#0a0a06;border-radius:10px;padding:1rem;font-size:1rem;
-}
+footer{border-top:1px solid var(--line);padding:48px 0 40px;color:#5c655f;font-size:13px}
+.foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;gap:24px}
+.foot a{text-decoration:none;border-bottom:1px solid transparent}
+.foot a:hover{color:var(--ink);border-color:var(--rose)}
+.dogs a{color:var(--amber);font-weight:600}
+.codename{margin-top:24px;max-width:70ch}
+.eighteen{margin-top:12px;letter-spacing:.1em;font-weight:600;color:var(--mut)}
+
 /* ---------- reveal ---------- */
-.rev{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.rev.in{opacity:1;transform:none}
-@media(min-width:760px){
-  .pillar{grid-template-columns:110px 1fr;gap:1.6rem;align-items:start}
-  .foot{flex-direction:row;justify-content:space-between;align-items:center}
-}
-@media(max-width:759px){
-  .sticky-cta{display:block}
-  footer{padding-bottom:8.5rem}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
-  h1.display .w>span{transform:none;opacity:1}
-  .rev{opacity:1;transform:none}
-  .sticky-cta{transition:none}
-}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .52s var(--ease),transform .52s var(--ease)}
+.reveal.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
-<a class="skip" href="#content">Skip to content</a>
 
-<header class="site">
-  <div class="wrap nav">
-    <a class="brand" href="./" aria-label="SDM home">
-      <span class="mark" aria-hidden="true">s</span>
-      <span class="word">SDM</span>
-    </a>
-    <a class="by" href="https://wearedogs.net">BY DOGS</a>
+<header class="hero">
+  <canvas id="eq" aria-hidden="true"></canvas>
+  <div class="hero-inner wrap">
+    <span class="age"><span class="dot"></span>18+ · ID-VERIFIED · US ONLY AT LAUNCH</span>
+    <h1>
+      <span class="w rose">Sex.</span>
+      <span class="w amber">Drugs.</span>
+      <span class="w bone">Music.</span>
+    </h1>
+    <p class="lede">A dating app for the <strong>animals in the jungle</strong>. Match on the music you live in and the appetites you actually have. Less swiping, more talking.</p>
+    <form class="wait" id="wait-top" novalidate>
+      <label for="email-top">JOIN THE WAITLIST</label>
+      <div class="wait-row">
+        <input id="email-top" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit">Get in</button>
+      </div>
+      <p class="wait-note">No spam. One email when the gates open.</p>
+      <div class="wait-done" role="status">You're on the list. When the gates open, you'll hear it here first.</div>
+    </form>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>ID-verified humans</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Music-first matching</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Your answers stay yours</span>
+    </div>
   </div>
 </header>
 
-<main id="content">
-  <section class="hero" aria-label="Introduction">
-    <canvas id="flies" aria-hidden="true"></canvas>
-    <div class="wrap inner">
-      <p class="kicker">A dating app &mdash; in the works</p>
-      <h1 class="display" aria-label="Sex. Drugs. Music.">
-        <span class="w"><span>Sex.</span></span>
-        <span class="w"><span>Drugs.</span></span>
-        <span class="w"><span>Music.</span></span>
-      </h1>
-      <p class="lede">A dating app for the <em>animals in the jungle</em>. The city after dark, as a dating pool.</p>
-      <p class="status"><b>18+.</b> ID-verified. Not launched yet.</p>
-      <div class="cta-row">
-        <a class="btn solid" href="https://github.com/YEAHDOGS/sdm">Follow the build</a>
-        <a class="btn ghost" href="#pillars">The idea</a>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Less swiping</span><span>More talking</span><span>Music first</span><span>Real humans</span><span>Opt-in everything</span>
+    <span>Less swiping</span><span>More talking</span><span>Music first</span><span>Real humans</span><span>Opt-in everything</span>
+  </div>
+</div>
+
+<section class="statement">
+  <div class="wrap reveal">
+    <h2>Dating apps turned people into <em>profiles.</em> We turned the volume back up.</h2>
+    <p>Somewhere between the fifth reswipe and the third dead chat, the whole thing started feeling like inventory management. SDM starts from a different question: what if the app knew your taste before it showed you a face? Your top artists, your late-night rotations, the things you're into and the things you're not — matched first, small talk second.</p>
+  </div>
+</section>
+
+<section aria-label="How it works">
+  <div class="wrap">
+    <div class="pillar reveal">
+      <div class="pillar-word">Music</div>
+      <div class="pillar-body">
+        <p><strong>Your top artists do the talking.</strong> Connect Spotify or Apple Music and SDM reads your actual taste — not the three bands you listed to look interesting in 2019.</p>
+        <p>Shared obsessions are the strongest signal we have. Two people with the same 2 a.m. rotation already have a first date.</p>
       </div>
     </div>
-  </section>
-
-  <section id="pillars" aria-label="The three pillars">
-    <div class="wrap">
-      <div class="sec-head rev">
-        <span class="n">01</span>
-        <h2>Three signals. One animal.</h2>
-      </div>
-
-      <article class="pillar rev">
-        <div class="idx" aria-hidden="true">i</div>
-        <div>
-          <h3>Music</h3>
-          <p>Match on the <strong>music you live to</strong>. Your listening builds a sonic fingerprint: a vibe score and one shared playlist, not a photo grid.</p>
-        </div>
-      </article>
-
-      <article class="pillar rev">
-        <div class="idx" aria-hidden="true">ii</div>
-        <div>
-          <h3>Sex</h3>
-          <p><strong>Compatibility on your terms.</strong> Opt-in preference matching, explained out loud, never exposed. Your answers stay yours.</p>
-        </div>
-      </article>
-
-      <article class="pillar rev">
-        <div class="idx" aria-hidden="true">iii</div>
-        <div>
-          <h3>Drugs</h3>
-          <p>Your vices are a <strong>signal, not a transaction</strong>. Preferences feed matching. Buying or selling anything gets you banned.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="talk" aria-label="Less swiping, more talking">
-    <div class="wrap">
-      <div class="sec-head rev">
-        <span class="n">02</span>
-        <h2>How it moves</h2>
-      </div>
-      <p class="big rev">Less swiping, <span class="hl">more talking.</span></p>
-      <p class="sub rev">Random text, voice, and video chat. Chatrooms anchored to shows, venues, and scenes. The jungle is the city after dark: concerts, afterparties, late-night diners. Find your pack.</p>
-    </div>
-  </section>
-
-  <section aria-label="Safety">
-    <div class="wrap">
-      <div class="sec-head rev">
-        <span class="n">03</span>
-        <h2>Built like it matters</h2>
-      </div>
-      <div class="safe rev">
-        <div class="row"><span class="t">ID-verified</span><p>Every account backed by a real ID. No bots, no catfish, no burner armies.</p></div>
-        <div class="row"><span class="t">18+ only</span><p>A hard gate before any social feature. Not a checkbox, a verification.</p></div>
-        <div class="row"><span class="t">Private by design</span><p>Sensitive answers are encrypted, minimized, and deletable for real.</p></div>
-        <div class="row"><span class="t">US only</span><p>One country at launch, so safety and moderation stay tight.</p></div>
+    <div class="pillar reveal">
+      <div class="pillar-word">Chemistry</div>
+      <div class="pillar-body">
+        <p><strong>Answer once, match deep.</strong> Optional assessments map the stuff that actually decides compatibility — appetites, boundaries, vices, the things polite apps won't ask about.</p>
+        <p>Everything is opt-in. Your answers are encrypted, never shown on your profile, and only ever used to compute fit. Skip anything. Delete everything.</p>
       </div>
     </div>
-  </section>
-
-  <section class="faq" aria-label="Questions">
-    <div class="wrap">
-      <div class="sec-head rev">
-        <span class="n">04</span>
-        <h2>Questions</h2>
+    <div class="pillar reveal">
+      <div class="pillar-word">Humans</div>
+      <div class="pillar-body">
+        <p><strong>Every account backed by a real ID.</strong> No bots, no catfish farms, no "models" messaging you at scale. AI patrols for spam around the clock; humans handle the appeals.</p>
+        <p>When everyone in the room is verified, the room gets honest fast.</p>
       </div>
-      <details class="rev">
-        <summary>Is sdm live?<span class="pm" aria-hidden="true">+</span></summary>
-        <p>Not yet. This page is the stake in the ground while the app is being built. Follow the build on GitHub for progress.</p>
-      </details>
-      <details class="rev">
-        <summary>What does it match on?<span class="pm" aria-hidden="true">+</span></summary>
-        <p>Music first: your listening builds a sonic fingerprint. Then opt-in compatibility on sexual preferences and vices. Every match is explained, never exposed.</p>
-      </details>
-      <details class="rev">
-        <summary>Is it really 18+?<span class="pm" aria-hidden="true">+</span></summary>
-        <p>Strictly. ID verification gates every social feature. The name is rock and roll attitude; the age gate is not.</p>
-      </details>
-      <details class="rev">
-        <summary>What about the drugs part?<span class="pm" aria-hidden="true">+</span></summary>
-        <p>Preferences are a compatibility signal. Buying, selling, or facilitating anything is a ban. Full stop.</p>
-      </details>
-      <details class="rev">
-        <summary>When and where?<span class="pm" aria-hidden="true">+</span></summary>
-        <p>US only at launch. One beta city first, then the rest of the jungle. Timing will be announced here.</p>
-      </details>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+
+<section class="rules">
+  <div class="wrap">
+    <h2 class="reveal">The jungle <em>has rules.</em></h2>
+    <p class="lead reveal">Wild doesn't mean lawless. A few non-negotiables keep the animals safe.</p>
+    <ul class="rule-list">
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><h3>18+, verified, no exceptions</h3><p>Government ID check before you can talk to anyone. US only at launch — one country's rules, done right, before we go anywhere else.</p></div>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div><h3>Your business stays your business</h3><p>Preferences are compatibility signals, encrypted and minimized. We don't warehouse IDs and we don't sell data — there's nothing to sell.</p></div>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+        <div><h3>Signals, not transactions</h3><p>What you're into is a matching input. Buying or selling anything — especially drugs — is an instant, permanent ban. The jungle provides; the app doesn't deal.</p></div>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><h3>Talk first</h3><p>Random text, voice, and video chat plus chatrooms — conversation is the product, not the prelude. If you can't hold a chat, the algorithm noticed.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <h2>Get in before<br>the <span class="rose">gates open.</span></h2>
+    <p>SDM is still being built. The waitlist is the velvet rope — early spots get first pick of the jungle when launch day hits.</p>
+    <form class="wait" id="wait-bottom" novalidate>
+      <label for="email-bottom">JOIN THE WAITLIST</label>
+      <div class="wait-row">
+        <input id="email-bottom" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit">Get in</button>
+      </div>
+      <p class="wait-note">No spam. One email when the gates open.</p>
+      <div class="wait-done" role="status">You're on the list. When the gates open, you'll hear it here first.</div>
+    </form>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap foot">
-    <p class="made">This product was made by <a href="https://wearedogs.net">DOGS</a></p>
-    <nav class="links" aria-label="Footer">
-      <a href="./privacy.html">Privacy</a>
-      <a href="./terms.html">Terms</a>
-      <a href="https://github.com/YEAHDOGS/sdm">GitHub</a>
-    </nav>
+  <div class="wrap">
+    <div class="foot">
+      <span class="dogs">This product was made by <a href="https://wearedogs.net">DOGS</a></span>
+      <nav>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </nav>
+    </div>
+    <p class="codename">SDM is the codename. The jungle gets a real name before launch.</p>
+    <p class="eighteen">18+ ONLY</p>
   </div>
 </footer>
-
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="https://github.com/YEAHDOGS/sdm" tabindex="-1">Follow the build</a>
-</div>
 
 <script>
 (function(){
   "use strict";
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- fireflies: one canvas, pause offscreen/hidden, skip if reduced motion ---- */
-  var cv = document.getElementById("flies");
-  if (cv && !reduced) {
-    var ctx = cv.getContext("2d"), W = 0, H = 0, flies = [], running = false, raf = 0;
+  /* equalizer canvas — the one authored motion moment */
+  var cv = document.getElementById("eq");
+  if (cv && !reduce) {
+    var ctx = cv.getContext("2d"), bars = [], raf = 0, running = false, t = 0;
     function size(){
-      var r = cv.parentElement.getBoundingClientRect();
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = r.width; H = r.height;
-      cv.width = W * dpr; cv.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var r = cv.parentElement.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = r.width * d; cv.height = r.height * d;
+      var n = Math.max(24, Math.floor(r.width / 26));
+      bars = [];
+      for (var i = 0; i < n; i++) bars.push({ p: Math.random() * Math.PI * 2, s: 0.4 + Math.random() * 0.9, w: (0.5 + Math.random() * 0.9) });
     }
-    function seed(){
-      flies = [];
-      var n = Math.min(44, Math.floor(W * H / 26000));
-      for (var i = 0; i < n; i++) {
-        flies.push({
-          x: Math.random() * W, y: Math.random() * H,
-          r: 1 + Math.random() * 2.4,
-          vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .22,
-          ph: Math.random() * Math.PI * 2, sp: .4 + Math.random() * .9,
-          amber: Math.random() < .45
-        });
-      }
-    }
-    function frame(t){
+    function draw(){
+      var W = cv.width, H = cv.height, n = bars.length, bw = W / n;
       ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < flies.length; i++) {
-        var f = flies[i];
-        f.x += f.vx; f.y += f.vy; f.ph += .016 * f.sp;
-        if (f.x < -8) f.x = W + 8; if (f.x > W + 8) f.x = -8;
-        if (f.y < -8) f.y = H + 8; if (f.y > H + 8) f.y = -8;
-        var a = .25 + .55 * (0.5 + 0.5 * Math.sin(f.ph));
-        var g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 4);
-        var c = f.amber ? "240,165,60" : "170,220,150";
-        g.addColorStop(0, "rgba(" + c + "," + a.toFixed(3) + ")");
-        g.addColorStop(1, "rgba(" + c + ",0)");
+      t += 0.028;
+      for (var i = 0; i < n; i++) {
+        var b = bars[i];
+        var v = (Math.sin(t * b.s + b.p) * 0.5 + 0.5);
+        v = v * v * 0.85 + 0.06;
+        var h = v * H * 0.55 * b.w, x = i * bw + bw * 0.28, w = bw * 0.44, y = H - h;
+        var g = ctx.createLinearGradient(0, H, 0, H - H * 0.55);
+        g.addColorStop(0, "rgba(225,29,72,0.85)");
+        g.addColorStop(1, "rgba(240,165,60,0.12)");
         ctx.fillStyle = g;
-        ctx.beginPath(); ctx.arc(f.x, f.y, f.r * 4, 0, 6.2832); ctx.fill();
+        ctx.fillRect(x, y, w, h);
       }
-      raf = requestAnimationFrame(frame);
+      raf = requestAnimationFrame(draw);
     }
-    function start(){ if (!running) { running = true; raf = requestAnimationFrame(frame); } }
-    function stop(){ if (running) { running = false; cancelAnimationFrame(raf); } }
-    size(); seed(); start();
-    window.addEventListener("resize", function(){ size(); seed(); });
+    function start(){ if (!running) { running = true; draw(); } }
+    function stop(){ running = false; cancelAnimationFrame(raf); }
+    size(); start();
+    window.addEventListener("resize", size);
+    new IntersectionObserver(function(e){ e[0].isIntersecting ? start() : stop(); }).observe(cv);
     document.addEventListener("visibilitychange", function(){ document.hidden ? stop() : start(); });
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? start() : stop(); }); }).observe(cv);
-    }
   }
 
-  /* ---- scroll reveals ---- */
-  var revs = document.querySelectorAll(".rev");
-  if ("IntersectionObserver" in window && !reduced) {
+  /* scroll reveals — utility, fire once */
+  if (!reduce && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e, i){
-        if (e.isIntersecting) {
-          e.target.style.transitionDelay = Math.min(e.target.getAttribute("data-d") || 0, 300) + "ms";
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
-    revs.forEach(function(el){ io.observe(el); });
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
   } else {
-    revs.forEach(function(el){ el.classList.add("in"); });
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
   }
 
-  /* ---- sticky mobile cta: show after hero ---- */
-  var sticky = document.getElementById("stickyCta");
-  var hero = document.querySelector(".hero");
-  if (sticky && hero && "IntersectionObserver" in window) {
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){ sticky.classList.toggle("show", !e.isIntersecting); });
-    }, { threshold: 0 }).observe(hero);
-    sticky.setAttribute("aria-hidden", "false");
-  }
-
-  /* ---- faq +/- toggle glyph ---- */
-  document.querySelectorAll(".faq details").forEach(function(d){
-    var pm = d.querySelector(".pm");
-    d.addEventListener("toggle", function(){ if (pm) pm.textContent = d.open ? "\u2013" : "+"; });
+  /* waitlist — honest local capture, no fake backend */
+  document.querySelectorAll("form.wait").forEach(function(f){
+    f.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var input = f.querySelector('input[type="email"]');
+      var v = (input.value || "").trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+        input.focus();
+        input.style.borderColor = "#e11d48";
+        return;
+      }
+      try {
+        var list = JSON.parse(localStorage.getItem("sdm-waitlist") || "[]");
+        if (list.indexOf(v) === -1) list.push(v);
+        localStorage.setItem("sdm-waitlist", JSON.stringify(list));
+      } catch (e) {}
+      f.querySelector(".wait-row").style.display = "none";
+      f.querySelector(".wait-note").style.display = "none";
+      f.querySelector(".wait-done").classList.add("show");
+    });
   });
 })();
 </script>
