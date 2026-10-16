@@ -22,6 +22,22 @@ photo-swipe mechanics.
   ecosystem stack (SvelteKit / Vite / Tailwind, Cloudflare Pages + R2), not
   Next.js (the old `.gitignore` template was retargeted accordingly).
 
+## Core mechanic — Live (decided 2026-10-15)
+
+**Presence-only swiping.** You can only swipe on people who are active
+right now. The deck is whoever is online this moment — log in and you're
+in the pool; log off and you vanish. No dormant profiles, ever.
+
+It feels like a live chat room, not a database: incoming likes pop up in
+real time while you swipe, and a match can go straight to talking because
+both people are still there. One line: **nobody here is asleep.**
+
+Design implications when this gets built:
+- Presence heartbeat gates deck visibility; the deck is the online set,
+  not a ranked list of everyone who ever signed up.
+- Likes are pushed live (WebSocket), never batched into a later digest.
+- Match → chat opens immediately, while both sides are still present.
+
 ## Status
 
 | Area | State |

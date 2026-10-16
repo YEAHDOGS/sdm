@@ -34,6 +34,13 @@ helps you find your pack.
 
 ## 3. Differentiators (why not just use the others?)
 
+0. **Live only (core mechanic, decided 2026-10-15).** Presence-only
+   swiping: the deck is only people active right now — log in and you're
+   in the pool, log off and you vanish. Likes pop up in real time, like a
+   live chat room, and a match can talk immediately because both people
+   are still there. No dormant profiles, ever. One line: *nobody here is
+   asleep.* This overrides the batch/realtime note in §7 for deck and
+   likes: presence and likes are realtime by design.
 1. **Sonic fingerprint > photo grid.** Match score is computed from
    listening overlap + gig overlap + scene overlap, shown as a "vibe
    score" with an actual shared playlist. Nobody else leads with this.
